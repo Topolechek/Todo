@@ -87,7 +87,7 @@ def viewtodo(request, todo_pk):
 def completetodo(request, todo_pk):
     todo = get_object_or_404(Todo, pk=todo_pk, user=request.user)
     if request.method == 'POST':
-        todo.datecomplited = timezone.now()
+        todo.datecompleted = timezone.now()
         todo.save()
         return redirect('currenttodos')
 
